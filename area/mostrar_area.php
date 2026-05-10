@@ -1,5 +1,5 @@
 <?php
-    include 'conexao.php';
+    include '../includes/conexao.php';
     $sql = "SELECT * FROM area";
     $result = mysqli_query($conexao, $sql);
     $linhas = mysqli_num_rows($result);

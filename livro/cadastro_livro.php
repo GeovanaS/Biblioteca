@@ -1,5 +1,5 @@
 <?php
-    include "conexao.php";
+    include_once '../includes/conexao.php';
     $sql = "SELECT * FROM area";
     $result = mysqli_query($conexao, $sql);
     $linhas = mysqli_num_rows($result);
@@ -25,10 +25,10 @@
         <select name="area"><br>
             <option value="area">Selecione a área</option>
             <?php
-                for($i=1;$i<$linhas;$i++) {
+                for($i=0;$i<$linhas;$i++) {
                     $registro = mysqli_fetch_array($result);
-                    $area = $registro['area'];
-                    $id_area = $registro['id_area'];
+                    $area = $registro['nome'];
+                    $id_area = $registro['id'];
                     echo "<option value='$id_area'>$area</option>";
                 }
             ?>

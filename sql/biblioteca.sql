@@ -1,4 +1,5 @@
 CREATE DATABASE IF NOT EXISTS biblioteca;
+
 USE biblioteca;
 
 CREATE TABLE aluno(
@@ -32,7 +33,7 @@ CREATE TABLE reserva (
  data_retirada DATE NOT NULL,
  data_entrega DATE NOT NULL,
  status BOOLEAN NOT NULL,
- matricula INT NOT NULL,
+ matricula INT NOT NULL, 
  id_livro INT NOT NULL,
  PRIMARY KEY(id),
  FOREIGN KEY (matricula) REFERENCES aluno(matricula) ON DELETE RESTRICT ON UPDATE CASCADE,

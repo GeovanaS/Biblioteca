@@ -1,6 +1,5 @@
 <?php
-    include "conexao.php";
-
+    include "../includes/conexao.php";
     $area = $_POST['area'];
 
     $sql = "INSERT INTO area (nome) VALUES ('$area')";
