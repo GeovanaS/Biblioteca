@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +13,10 @@
                 <div class="logo">
                    <h1>📚 Sistema de Biblioteca</h1>
                 </div>
-                <ul class="menu">
+
+                <button class="menu-hamburger" id="menu-hamburger">☰</button>
+                <nav class="menu" id="menu">
+                <ul>
                     <li><a href="index.php">Início</a></li>
                     <li><a href="aluno/mostrar_aluno.php">Alunos</a></li>
                     <li><a href="area/mostrar_area.php">Áreas</a></li>

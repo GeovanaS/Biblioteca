@@ -5,5 +5,7 @@
         <p>Desenvolvido por Geovana Silveira.</p>
     </div>
 </footer>
+<!-- JavaScript do Menu Hambúrguer -->
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
