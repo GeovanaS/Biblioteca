@@ -154,6 +154,6 @@ http://localhost/biblioteca
 
 ---
 
-# Autor
+# Autora
 
 Projeto desenvolvido por Geovana Silveira.

@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color:#333;
+}
+
+.navbar {
+    background-color: #6A5ACD;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.container h1{
+    margin: 0;
+    text-align: center;
+    color: #6A5ACD;
+}   
+
+.navbar .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1{
+    color: #ecf0f1;
+    font-size: 1.8rem;
+}
+
+.menu{
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.menu a{
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover{
+    color: #C2BCE6;
+}
+
+main{
+    min-height: 70vh;
+}
+
+.home-container{
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.home-title{
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+}
+
+.menu-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+    gap: 30px;
+}
+
+.menu-section{
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s;
+}
+
+.menu-section:hover{
+    transform: translateY(-5px);
+}
+
+.menu-section h2{
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #3498db;
+}
+
+.menu-section ul{
+    list-style: none;
+}   
+
+.menu-section li{
+    margin-bottom: 12px;
+    background-color: #7465C9;
+    border-radius: 5px;
+}
+
+.menu-section a{
+    display: block;
+    color: #ffffff;
+    padding: 12px 15px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.menu-section a:hover{
+    background-color: #6A5ACD;
+    color: #fff;
+    padding-left: 20px;
+}
+
+footer{
+    background-color: #6A5ACD;
+    color: #ffffff;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+}
+
+footer p{
+    margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+    .navbar .container{
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .menu{
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .menu-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .page-title{
+        font-size: 1.8rem;
+    }
+
+}
