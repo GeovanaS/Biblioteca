@@ -1,28 +1,22 @@
 <?php
     include_once '../includes/conexao.php';
+    include_once '../includes/header.php';
     $sql = "SELECT * FROM area";
     $result = mysqli_query($conexao, $sql);
     $linhas = mysqli_num_rows($result);
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Livro</title>
-</head>
-<body>
+    
+    <div class="form-container">
     <h1>Cadastro de Livro</h1>
     <form action="insereLivro.php" method="POST">
         <label for="titulo">Título:</label>
-        <input type="text" id="titulo" name="tituloLivro" required>
+        <input type="text" id="titulo" name="tituloLivro" maxlength="50" required> 
 
         <label for="autor">Autor:</label>
-        <input type="text" id="autor" name="autorLivro" required><br><br>
+        <input type="text" id="autor" name="autorLivro" maxlength="50" required>
 
         <label for="area">Área:</label>
-        <select name="area"><br>
+        <select name="area">
             <option value="area">Selecione a área</option>
             <?php
                 for($i=0;$i<$linhas;$i++) {
@@ -32,11 +26,13 @@
                     echo "<option value='$id_area'>$area</option>";
                 }
             ?>
-
         </select>
 
-        <input type="reset" value="Limpar">
-        <input type="submit" value="Enviar">
-    
-</body>
-</html>
+        <div class="botoes">
+            <input type="reset" value="Limpar">
+            <input type="submit" value="Enviar">
+        </div>
+
+</div>
+
+<?php include '../includes/footer.php'; ?>

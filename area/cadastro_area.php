@@ -1,17 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Área</title>
-</head>
-<body>
+<?php include '../includes/header.php'; ?>
+
+<div class="form-container">
     <h1>Cadastro de Área</h1>
     <form action="insereArea.php" method="POST">
         <label for="area">Área:</label>
-        <input type="text" id="area" name="area" required><br><br>
+        <input type="text" id="area" name="area" maxlength="50" required>
 
-        <input type="submit" value="Cadastrar">
+        <div class="botoes">
+            <input type="submit" value="Cadastrar">
+            <input type="reset" value="Limpar">
+        </div>
+</div>
     
-</body>
-</html>
+<?php include '../includes/footer.php'; ?>

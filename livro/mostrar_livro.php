@@ -1,6 +1,6 @@
 <?php
-
 include '../includes/conexao.php';
+include '../includes/header.php';
 $sql = "SELECT livro.id, livro.titulo, livro.status, livro.autor, area.nome AS area_nome 
 FROM livro INNER JOIN area 
 ON livro.id_area = area.id";
@@ -8,16 +8,11 @@ $result = mysqli_query($conexao, $sql);
 $linhas = mysqli_num_rows($result);
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mostrar Livros</title>
-</head>
-<body>
-    <h1>Listar Livros</h1>
-    <table border="1">
+<h1>Listar Livros</h1>
+    <div class="botao-adicionar">
+        <a href="cadastro_livro.php">Adicionar Novo Livro</a>
+    </div>
+    <table>
         <tr>
             <th>ID</th>
             <th>Título</th>
@@ -40,6 +35,6 @@ $linhas = mysqli_num_rows($result);
             }
             mysqli_close($conexao);
         ?>
-        </table>
-</body>
-</html>
+</table>
+
+<?php include '../includes/footer.php'; ?>

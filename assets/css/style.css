@@ -26,7 +26,11 @@ body{
     margin: 0;
     text-align: center;
     color: #6A5ACD;
-}   
+}
+
+main h1, .container h1{
+    margin-top: 30px;
+}
 
 .navbar .container{
     display: flex;
@@ -56,6 +60,123 @@ body{
     cursor: pointer;
     padding: 5px 10px;
 }
+
+/* Formulario Cadastro */
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.form-container form{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    width: 350px;
+}
+
+.form-container .botoes{
+    margin-top: 20px;
+}
+
+.form-container .botoes input{
+   border-radius: 10px;
+   background-color: #6A5ACD;
+   color: #ffffff;
+   font-weight:bold;
+   padding: 10px;
+}
+
+form select{
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid;
+}
+
+/* Botão Adicionar */
+.botao-adicionar{
+    width: 80%;
+    margin: 20px auto;
+    text-align: right;
+}
+
+.botao-adicionar a{
+    background-color: #6A5ACD;
+    color: #ffffff;
+    padding: 10px 18px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.botao-adicionar a:hover{
+    background-color: #5a4db8;
+}
+
+/* Checkbox */
+.checkbox-livro{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.checkbox-livro input[type="checkbox"]{
+    width: auto;
+    margin: 0;
+}
+
+/* Tabelas */
+table{
+    width: 80%;
+    margin: 30px auto;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+table th{
+    background-color: #6A5ACD;
+    color: #ffffff;
+    padding: 12px;
+    text-align: center;
+}
+
+table td{
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+table a{
+    text-decoration: none;
+    font-weight: bold;
+    color: #6A5ACD;
+}
+
 
 /* Menu Desktop */
 .menu ul{

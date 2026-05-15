@@ -1,25 +1,21 @@
 <?php
     include '../includes/conexao.php';
-    $sql = "SELECT * FROM aluno";
+    include '../includes/header.php';
+    $sql = "SELECT * FROM aluno ORDER BY nome";
     $result = mysqli_query($conexao, $sql);
     $linhas = mysqli_num_rows($result);
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mostrar Alunos</title>
-</head>
-<body>
     <h1>Visualizar Alunos Cadastrados</h1>
-    <table border="1">
+    <div class="botao-adicionar">
+        <a href="cadastro_aluno.php">Adicionar Novo Aluno</a>
+    </div>
+    <table>
         <tr>
             <th>Nome</th>
             <th>Email</th>
             <th>CPF</th>
             <th>Data de Nascimento</th>
+            <th>Ações</th>
         </tr>
         <?php
             for($i = 0; $i < $linhas; $i++) {
@@ -29,10 +25,14 @@
                 echo "<td>" . $registro['email'] . "</td>";
                 echo "<td>" . $registro['cpf'] . "</td>";
                 echo "<td>" . $registro['data_nasc'] . "</td>";
+
+                echo "<td> <a href='editar_aluno.php?id=" . $registro['matricula'] . "'>Editar</a>
+                | <a href='excluir_aluno.php?id=" . $registro['matricula'] . "'onclick=\"return confirm('Tem certeza que deseja excluir este aluno?')\">
+                Excluir</a> </td>";
                 echo "</tr>";
             }
             mysqli_close($conexao);
         ?>
     </table>
-</body>
-</html>
+
+<?php include '../includes/footer.php'; ?>

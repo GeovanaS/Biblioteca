@@ -1,19 +1,16 @@
 <?php
     include '../includes/conexao.php';
+    include '../includes/header.php';
     $sql = "SELECT * FROM area";
     $result = mysqli_query($conexao, $sql);
     $linhas = mysqli_num_rows($result);
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mostrar Áreas</title>
-</head>
-<body>
-    <h1>Visualizar Áreas Cadastradas</h1>
-    <table border="1">
+
+<h1>Visualizar Áreas Cadastradas</h1>
+<div class="botao-adicionar">
+        <a href="cadastro_area.php">Adicionar Nova Área</a>
+    </div>
+    <table>
         <tr>
             <th>ID</th>
             <th>Nome</th>
@@ -30,5 +27,6 @@
             }
             mysqli_close($conexao);
         ?>
-</body>
-</html>
+    </table>
+
+<?php include '../includes/footer.php'; ?>
