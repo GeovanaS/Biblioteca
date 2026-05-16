@@ -8,14 +8,17 @@ $base_url = "/Trabalho-LP2-BD2/";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Biblioteca</title>
-    <link rel="stylesheet" href="<?= $base_url ?>/assets/css/style.css">
+    <link rel="stylesheet" href="<?= $base_url ?>assets/css/style.css">
 </head>
 <body>
     <header>
         <nav class="navbar">
             <div class="container">
                 <div class="logo">
-                   <h1>📚 Sistema de Biblioteca</h1>
+                    <a href="<?= $base_url ?>index.php">
+                        <img src="<?= $base_url ?>assets/img/livros.png" alt="Logo da Biblioteca">
+                        <h1>Sistema de Biblioteca</h1>
+                    </a>
                 </div>
 
                 <button class="menu-hamburger" id="menu-hamburger">☰</button>
@@ -29,6 +32,6 @@ $base_url = "/Trabalho-LP2-BD2/";
                     <li><a href="<?= $base_url ?>reserva/mostrar_devolucoes.php">Devolução</a></li>
                 </ul>
             </div>
-            </nav>
+        </nav>
     </header>
 <main class="container">

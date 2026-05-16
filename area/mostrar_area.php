@@ -14,7 +14,8 @@
         <tr>
             <th>ID</th>
             <th>Nome</th>
-            <th>Ações</th>
+            <th>Editar</th>
+            <th>Excluir</th>
         </tr>
         <?php
             for($i = 0; $i < $linhas; $i++) {
@@ -22,8 +23,18 @@
                 echo "<tr>";
                 echo "<td>" . $registro['id'] . "</td>";
                 echo "<td>" . $registro['nome'] . "</td>";
-                echo "<td><a href='editar_area.php?id=" . $registro['id'] . "'>Editar</a> | <a href='excluir_area.php?id=" . $registro['id'] . "'>Excluir</a></td>";
-                echo "</tr>";
+                echo "<td class='acao-editar'>
+                        <a href='editar_area.php?id=" . $registro['id'] . "'>
+                         Editar
+                        </a>
+                       </td>";
+
+                echo "<td class='acao-excluir'>
+                        <a href='excluir_area.php?id=" . $registro['id'] . "'    
+                        onclick=\"return confirm('Tem certeza que deseja excluir esta área?')\">
+                        Excluir
+                        </a>
+                        </td>";
             }
             mysqli_close($conexao);
         ?>

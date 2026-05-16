@@ -39,10 +39,25 @@ main h1, .container h1{
     flex-wrap: wrap; /*permite quebra de linha*/
 }
 
+
+.logo a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 15px;
+}
+
+.logo img{
+    width: 45px;
+    height: auto;
+    cursor: pointer;
+}
+
+
 .logo h1{
     color: #ecf0f1;
-    font-size: 1.6rem;
     margin: 0;
+    font-size: 25px;
 }
 
 .menu{
@@ -98,14 +113,41 @@ form input {
 
 .form-container .botoes{
     margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.form-container .botoes input,
+.btn-voltar{
+   width: 100%;
+   padding: 12px;
+   border: none;
+   border-radius: 10px;
+   font-size: 16px;
+   font-weight: bold;
+   text-align: center;
+   box-sizing: border-box;
 }
 
 .form-container .botoes input{
-   border-radius: 10px;
    background-color: #6A5ACD;
    color: #ffffff;
-   font-weight:bold;
-   padding: 10px;
+   cursor: pointer;
+}
+
+/* Botão Voltar */
+.btn-voltar{
+   display: inline-block;
+   background-color: #3413ee;
+   color: #ffffff;
+   text-decoration: none;
+   transition: 0.3s;
+}
+
+.btn-voltar:hover{
+    background-color: #5a6268;
 }
 
 form select{
@@ -154,7 +196,7 @@ form select{
 table{
     width: 80%;
     margin: 30px auto;
-    background-color: white;
+    background-color: #C2BCE6;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -169,6 +211,12 @@ table td{
     padding: 10px;
     text-align: center;
     border-bottom: 1px solid #ddd;
+    color: #333;
+    font-weight: bold;
+}
+
+table th, table td{
+    border: 1px solid #333;
 }
 
 table a{
@@ -178,7 +226,7 @@ table a{
 }
 
 
-/* Menu Desktop */
+/* Menu */
 .menu ul{
     display: flex;
     list-style: none;
@@ -190,7 +238,8 @@ table a{
 .menu a{
     color: #ecf0f1;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: bold;
+    font-size: 17px;
     padding: 8px 14px;
     border-radius: 6px;
     transition: 0.3s;
@@ -268,6 +317,34 @@ main{
     color: #fff;
     padding-left: 20px;
 }
+
+/* Botoes Editar/Exluir */
+.acao-editar a, .acao-excluir a{
+    display: inline-block;
+    color: #ffffff;
+    padding: 6px 8px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.acao-editar a{
+    background-color: #6A5ACD;
+}
+
+.acao-editar a:hover{
+    background-color: #5a4db8;
+}
+
+.acao-excluir a{
+    background-color: #6A5ACD;
+}
+
+.acao-excluir a:hover{
+    background-color: #5a4db8;
+}
+
 
 footer{
     background-color: #6A5ACD;

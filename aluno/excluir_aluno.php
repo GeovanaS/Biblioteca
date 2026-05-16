@@ -1,6 +1,7 @@
 <?php 
     include '../includes/conexao.php';
     $codigo = $_GET['id'];
+    //verifica se o aluno possui emprestimos ativos
     $sqlVerifica = "SELECT * FROM reserva WHERE matricula = $codigo";
     $resultVerifica = mysqli_query($conexao, $sqlVerifica);
 
@@ -9,7 +10,13 @@
     } else {
         $sql = "DELETE FROM aluno WHERE matricula = $codigo";
         $result = mysqli_query($conexao, $sql);
-        $linhas = mysqli_num_rows($result);
+        
+        if($result) {
+            header("Location: mostrar_aluno.php");
+            exit;
+        } else {
+            echo "Não foi possível excluir o aluno.";
+        }
     }
     mysqli_close($conexao);
 ?>

@@ -1,55 +1,76 @@
 <?php
-    include '../includes/conexao.php';
-    $codigo = $_GET['id'];
-     $sql = "SELECT * FROM aluno WHERE matricula = $codigo";
-     $resultado = mysqli_query($conexao,$sql);
-     $linhas = mysqli_num_rows($resultado);
+include '../includes/conexao.php';
+include '../includes/header.php';
+
+$mensagem = "";
+
+if ($_POST) {
+
+    $matricula = $_POST['matricula'];
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+    $cpf = $_POST['cpf'];
+    $data_nasc = $_POST['data_nasc'];
+
+    $sql = "UPDATE aluno 
+            SET nome = '$nome',
+                email = '$email',
+                cpf = '$cpf',
+                data_nasc = '$data_nasc'
+            WHERE matricula = '$matricula'";
+
+    $resultado = mysqli_query($conexao, $sql);
+
+    if ($resultado) {
+        $mensagem = "Alteração do aluno efetuada com sucesso!";
+    } else {
+        $mensagem = "Não foi possível alterar o aluno!";
+    }
+}
+
+$codigo = $_GET['id'];
+
+$sql = "SELECT * FROM aluno WHERE matricula = $codigo";
+
+$resultado = mysqli_query($conexao, $sql);
+
+$registro = mysqli_fetch_array($resultado);
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+<div class="form-container">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Aluno</title>
-</head>
-
-<body>
     <h1>Editar Aluno</h1>
-    <form name='editaraluno' method="post">
+
+    <form name="editaraluno" method="post">
+
+        <input type="hidden" name="matricula" value="<?php echo $registro['matricula']; ?>" readonly>
+
+        Nome<input type="text" name="nome" maxlength="50" value="<?php echo $registro['nome']; ?>">
+
+        Email<input type="email" name="email" maxlength="50" value="<?php echo $registro['email']; ?>">
+
+        CPF<input type="text" name="cpf" maxlength="11" value="<?php echo $registro['cpf']; ?>">
+
+        Data de Nascimento <input type="date" name="data_nasc" value="<?php echo $registro['data_nasc']; ?>">
 
         <?php
-    for ($i=1; $i <= $linhas; $i++){
-        $registro = mysqli_fetch_array($resultado);
-        $mat = $registro['matricula'];
-        $nome = $registro['nome'];
-        echo "Matrícula <input name='matricula' value='$mat'><br>";
-        echo "Nome <input name='nome' value='$nome'>";
-        echo "<br>Email <input name='email' value='" . $registro['email'] . "'>";
-        echo "<br>CPF <input name='cpf' value='" . $registro['cpf'] . "'>";
-        echo "<br>Data de Nascimento <input name='data_nasc' value='" . $registro['data_nasc'] . "'>";
-        echo "<br><input type='submit' value='Editar'>"; 
-        echo "<a href='mostrar_aluno.php'>Voltar</a>";
-    }
+        if ($mensagem != "") {
+            echo "<p class='mensagem'>$mensagem</p>";
+        }
+        ?>
 
-if($_POST){
+        <div class="botoes">
+            <input type="submit" value="Editar">
+            <a class="btn-voltar" href="mostrar_aluno.php">
+                Voltar
+            </a>
+        </div>
 
-$sql = "UPDATE aluno
-        SET nome = '$nome',
-            email = '$email',
-            cpf = '$cpf',
-            data_nasc = '$data'
+    </form>
+</div>
 
-        WHERE matricula = '$id'";
-        $resultado = mysqli_query($conexao, $sql);
-if($resultado) {
-    header("Location: mostrar_aluno.php");
-} else {
-    echo "Erro ao atualizar aluno: " . mysqli_error($conexao);
-}
-
+<?php
 mysqli_close($conexao);
 
-}
+include '../includes/footer.php';
 ?>
