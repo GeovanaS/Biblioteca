@@ -24,7 +24,7 @@
         <label for="Data de Entrega">Data de Entrega:</label>
         <input type="date" id="data_entrega" name="data_entrega" required>
         
-        <label for="livro">Livro:</label>
+        <label for="livro">Livros:</label>
         <?php 
             while($livro = mysqli_fetch_array($resultLivros)) {
                 echo "

@@ -18,8 +18,8 @@ $linhas = mysqli_num_rows($result);
             <th>Título</th>
             <th>Autor</th>
             <th>Área</th>
-            <th>Status</th>
-            <th>Ações</th>
+            <th>Editar</th>
+            <th>Excluir</th>
         </tr>
         <?php
             for($i = 0; $i < $linhas; $i++) {
@@ -29,8 +29,18 @@ $linhas = mysqli_num_rows($result);
                 echo "<td>" . $registro['titulo'] . "</td>";
                 echo "<td>" . $registro['autor'] . "</td>";
                 echo "<td>" . $registro['area_nome'] . "</td>";
-                echo "<td>" . ($registro['status'] == 1 ? 'Disponível' : 'Indisponível') . "</td>";
-                echo "<td><a href='editar_livro.php?id=" . $registro['id'] . "'>Editar</a> | <a href='excluir_livro.php?id=" . $registro['id'] . "'>Excluir</a></td>";
+                echo "<td class='acao-editar'>
+                  <a href='editar_livro.php?id=" . $registro['id'] . "'>
+                        Editar
+                  </a>
+                  </td>";
+
+                echo "<td class='acao-excluir'>
+                    <a href='excluir_livro.php?id=" . $registro['id'] . "'
+                    onclick=\"return confirm('Tem certeza que deseja excluir este livro?')\">
+                    Excluir
+                    </a>
+                    </td>";
                 echo "</tr>";
             }
             mysqli_close($conexao);

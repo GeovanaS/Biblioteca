@@ -34,7 +34,8 @@
         <th>Data Retirada</th>
         <th>Data Entrega</th>
         <th>Status</th>
-        <th>Ações</th>
+        <th>Editar</th>
+        <th>Excluir</th>
     </tr>
 
     <?php
@@ -44,10 +45,11 @@
 
             echo "<td>".$registro['nome_aluno']."</td>";
             echo "<td>".$registro['nome_livro']."</td>";
-            echo "<td>".$registro['data_retirada']."</td>";
-            echo "<td>".$registro['data_entrega']."</td>";
+            echo "<td>". date('d/m/Y', strtotime($registro['data_retirada']))."</td>";
+            echo "<td>". date('d/m/Y', strtotime($registro['data_entrega']))."</td>";
             echo "<td>".$registro['status']."</td>";
-            echo "<td><a href='editar_reserva.php?id=".$registro['id']."'>Editar</a> | <a href='excluir_reserva.php?id=".$registro['id']."' onclick=\"return confirm('Tem certeza que deseja excluir este empréstimo?')\">Excluir</a></td>";
+            echo "<td class='acao-editar'><a href='editar_reserva.php?id=".$registro['id']."'>Editar</a></td>"; 
+            echo "<td class='acao-excluir'><a href='excluir_reserva.php?id=".$registro['id']."' onclick=\"return confirm('Tem certeza que deseja excluir este empréstimo?')\">Excluir</a></td>";
             echo "</tr>";
         }
 

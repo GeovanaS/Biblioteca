@@ -29,8 +29,8 @@
         </select>
 
         <div class="botoes">
-            <input type="reset" value="Limpar">
             <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
         </div>
 
 </div>
