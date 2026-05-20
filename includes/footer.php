@@ -6,6 +6,6 @@
     </div>
 </footer>
 <!-- JavaScript do Menu Hambúrguer -->
-    <script src="assets/js/script.js"></script>
+    <script src="<?= BASE_URL ?>assets/js/script.js"></script>
 </body>
 </html>

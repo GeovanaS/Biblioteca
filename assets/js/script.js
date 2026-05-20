@@ -14,4 +14,16 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
+
+    /* JavaScript para selecionar todos os checkboxes */
+    const selecionarTodos = document.getElementById('selecionarTodos');
+
+    if (selecionarTodos) {
+        selecionarTodos.addEventListener('change', function () {
+            const checkboxes = document.querySelectorAll('input[name="reservas[]"]');
+            checkboxes.forEach(function (checkbox) {
+                checkbox.checked = selecionarTodos.checked;
+            });
+        });
+    }
 });

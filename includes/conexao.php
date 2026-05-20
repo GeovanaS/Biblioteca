@@ -8,6 +8,5 @@
         die("Conexão falhou: " . mysqli_connect_error());
     }
     // echo "Conexão bem sucedida!";
-    // Mensagem de sucesso comentada para evitar problemas de headers
     mysqli_set_charset($conexao, "utf8");
 ?>  

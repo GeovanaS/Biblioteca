@@ -47,7 +47,7 @@
             echo "<td>".$registro['nome_livro']."</td>";
             echo "<td>". date('d/m/Y', strtotime($registro['data_retirada']))."</td>";
             echo "<td>". date('d/m/Y', strtotime($registro['data_entrega']))."</td>";
-            echo "<td>".$registro['status']."</td>";
+            echo "<td>".($registro['status'] == 1 ? 'Em aberto' : 'Encerrada')."</td>";
             echo "<td class='acao-editar'><a href='editar_reserva.php?id=".$registro['id']."'>Editar</a></td>"; 
             echo "<td class='acao-excluir'><a href='excluir_reserva.php?id=".$registro['id']."' onclick=\"return confirm('Tem certeza que deseja excluir este empréstimo?')\">Excluir</a></td>";
             echo "</tr>";

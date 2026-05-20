@@ -2,7 +2,7 @@
     include '../includes/conexao.php';
     $codigo = $_GET['id'];
     //verifica se o aluno possui emprestimos ativos
-    $sqlVerifica = "SELECT * FROM reserva WHERE matricula = $codigo";
+    $sqlVerifica = "SELECT * FROM reserva WHERE matricula = $codigo AND status = 1";
     $resultVerifica = mysqli_query($conexao, $sqlVerifica);
 
     if(mysqli_num_rows($resultVerifica) > 0) {

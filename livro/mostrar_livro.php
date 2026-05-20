@@ -16,6 +16,7 @@ $linhas = mysqli_num_rows($result);
         <tr>
             <th>ID</th>
             <th>Título</th>
+            <th>Status</th>
             <th>Autor</th>
             <th>Área</th>
             <th>Editar</th>
@@ -27,6 +28,7 @@ $linhas = mysqli_num_rows($result);
                 echo "<tr>";
                 echo "<td>" . $registro['id'] . "</td>";
                 echo "<td>" . $registro['titulo'] . "</td>";
+                echo "<td>" . ($registro['status'] == 1 ? 'Disponível' : 'Indisponível') . "</td>"; 
                 echo "<td>" . $registro['autor'] . "</td>";
                 echo "<td>" . $registro['area_nome'] . "</td>";
                 echo "<td class='acao-editar'>

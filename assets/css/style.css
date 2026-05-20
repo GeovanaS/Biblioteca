@@ -358,6 +358,43 @@ footer p{
     margin: 5px 0;
 }
 
+/*Pagina de devolução*/
+.devolucao-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.devolucao-container .botoes {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 10px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.devolucao-container .botoes .btn-voltar{
+    background-color: #3413ee;
+}
+
+.devolucao-container .botoes input{
+    background-color: #5a4db8;
+}
+
+.devolucao-container .botoes input,
+.devolucao-container .botoes .btn-voltar {
+    width: 350px; 
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+    text-decoration: none;
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
     .navbar .container{

@@ -12,22 +12,20 @@ if(isset($_POST['reservas'])){
                      FROM reserva
                      WHERE id = $idReserva";
 
-        $resultBusca =
-        mysqli_query($conexao, $sqlBusca);
-
-        $reserva =
-        mysqli_fetch_array($resultBusca);
+        $resultBusca = mysqli_query($conexao, $sqlBusca);
+        
+        $reserva = mysqli_fetch_array($resultBusca);
 
         $idLivro = $reserva['id_livro'];
 
-        /* Finalizar reserva */
+        /* Atualiza status da reserva para devolvido */
         $sqlReserva = "UPDATE reserva
                        SET status = 0
                        WHERE id = $idReserva";
 
         mysqli_query($conexao, $sqlReserva);
 
-        /* Liberar livro */
+        /* Muda status do livro para disponível */
         $sqlLivro = "UPDATE livro
                      SET status = 1
                      WHERE id = $idLivro";
@@ -38,7 +36,6 @@ if(isset($_POST['reservas'])){
 
 mysqli_close($conexao);
 
-/* Volta para listagem */
 header("Location: mostrar_devolucoes.php");
 
 exit;
