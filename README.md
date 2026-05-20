@@ -10,12 +10,13 @@ Sistema web desenvolvido em PHP e MySQL para gerenciamento de uma biblioteca aca
 - Cadastro de alunos
 - Listagem de alunos
 - Edição de alunos
-- Exclusão de alunos
+- Exclusão de alunos (apenas se não houver empréstimos em aberto)
 
 ### 📖 Livros
 - Cadastro de livros
 - Associação de livros com áreas
 - Controle de disponibilidade
+- Status exibido como "Disponível" ou "Emprestado"
 - Listagem de livros
 - Edição e exclusão
 
@@ -27,23 +28,26 @@ Sistema web desenvolvido em PHP e MySQL para gerenciamento de uma biblioteca aca
 ### 🔄 Reservas / Empréstimos
 - Empréstimo de livros
 - Seleção de múltiplos livros
-- Controle de status
+- Apenas livros disponíveis aparecem para empréstimo
+- Status exibido como "Em andamento" ou "Encerrado"
 - Devolução de livros
+- Checkbox para selecionar todos os empréstimos na devolução
 - Atualização automática de disponibilidade
 
 ---
 
-# Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - PHP
 - MySQL
 - HTML5
 - CSS3
+- JavaScript
 - XAMPP
 
 ---
 
-# Estrutura do Projeto
+## Estrutura do Projeto
 
 ```bash
 biblioteca/
@@ -52,15 +56,20 @@ biblioteca/
 ├── area/
 ├── livro/
 ├── reserva/
+├── devolucao/
 ├── includes/
-├── css/
+├── assets/
+│   ├── css/
+│   ├── js/
+│   └── img/
 ├── sql/
+├── config.php
 └── index.php
 ```
 
 ---
 
-# Banco de Dados
+## Banco de Dados
 
 O banco de dados utilizado chama-se:
 
@@ -78,9 +87,9 @@ no phpMyAdmin.
 
 ---
 
-# Como Executar o Projeto
+## Como Executar o Projeto
 
-## 1. Clonar o repositório
+### 1. Clonar o repositório
 
 ```bash
 git clone https://github.com/GeovanaS/Biblioteca.git
@@ -88,7 +97,7 @@ git clone https://github.com/GeovanaS/Biblioteca.git
 
 ---
 
-## 2. Mover para a pasta do XAMPP
+### 2. Mover para a pasta do XAMPP
 
 Coloque o projeto dentro da pasta:
 
@@ -104,7 +113,7 @@ C:/xampp/htdocs/biblioteca
 
 ---
 
-## 3. Iniciar o XAMPP
+### 3. Iniciar o XAMPP
 
 Ative:
 - Apache
@@ -112,7 +121,7 @@ Ative:
 
 ---
 
-## 4. Criar o banco de dados
+### 4. Criar o banco de dados
 
 Abra o phpMyAdmin:
 
@@ -128,7 +137,7 @@ biblioteca.sql
 
 ---
 
-## 5. Executar o sistema
+### 5. Executar o sistema
 
 Abra no navegador:
 
@@ -138,22 +147,25 @@ http://localhost/biblioteca
 
 ---
 
-# Funcionalidades do Sistema
+## Funcionalidades do Sistema
 
-## Cadastro de Livro
-- Seleção da área através de selectbox
-- Livro inicia como disponível
+### Cadastro de Livro
+- Seleção da área através de selectbox carregada do banco de dados
+- Livro inicia automaticamente como disponível
 
-## Reserva de Livros
-- Apenas livros disponíveis aparecem
-- Possibilidade de selecionar múltiplos livros
+### Reserva de Livros
+- Apenas livros disponíveis aparecem para seleção
+- Possibilidade de selecionar múltiplos livros por empréstimo
+- Data de retirada preenchida automaticamente com a data atual
 
-## Devolução
-- Atualiza o status da reserva
-- Atualiza o status do livro automaticamente
+### Devolução
+- Lista apenas empréstimos em aberto
+- Checkbox no cabeçalho para selecionar/desmarcar todos
+- Atualiza o status da reserva para encerrado
+- Atualiza o status do livro para disponível automaticamente
 
 ---
 
-# Autora
+## Autora
 
 Projeto desenvolvido por Geovana Silveira.
