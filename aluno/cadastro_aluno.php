@@ -3,7 +3,7 @@
 <div class="form-container">
     <h1>Cadastro de Aluno</h1>
 
-    <form action="insereAluno.php" method="POST">
+    <form action="insereAluno.php" id="formCadastro" method="POST">
 
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nomeAluno" maxlength="50" required>
@@ -21,7 +21,6 @@
             <input type="submit" value="Cadastrar">
             <input type="reset" value="Limpar">
         </div>
-
     </form>
 </div>
 
