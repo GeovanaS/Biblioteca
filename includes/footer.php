@@ -5,6 +5,7 @@
         <p>Desenvolvido por Geovana Silveira.</p>
     </div>
 </footer>
+<script src="<?= BASE_URL ?>assets/js/validarForm.js"></script>
 <!-- JavaScript do Menu Hambúrguer -->
     <script src="<?= BASE_URL ?>assets/js/script.js"></script>
 </body>
